@@ -1,0 +1,26 @@
+app:
+  name: metro-ems
+  env: production
+  debug: false
+
+server:
+  host: 0.0.0.0
+  port: 8002
+
+iobox:
+  username: admin
+  password: SI.password.secret
+
+databases:
+  auth_db: auth.db
+  firmware_state_db: firmware_state.db
+
+opennms:
+  base_url: http://192.168.66.156:8980
+  timeout: 10
+
+paths:
+  firmware_dir: firmwareEMS
+
+security:
+  session_ttl_seconds: 86400

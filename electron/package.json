@@ -1,0 +1,44 @@
+{
+  "name": "metro-ems",
+  "version": "1.0.0",
+  "description": "MetroEMS utility for configuring Metro devices",
+  "author": "Keywest Networks",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_ENV=development electron .",
+    "dist": "npm run build-react && electron-builder --linux --win",
+    "build-react": "cd /home/mokiladesktop5/Documents/DesktopElectronapp_ReactApp/my-electron-react-app/React_EMS/metro_EMS/MetroEMS-main && npm install && npm run build && cp -r build /home/mokiladesktop5/Documents/DesktopElectronapp_ReactApp/my-electron-react-app/electron/",
+    "pack-win": "electron-builder --win",
+    "pack-linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "28.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.example.myelectronapp",
+    "productName": "MetroEMS-UI",
+    "directories": {
+      "buildResources": "build-assets",
+      "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility",
+      "icon": "build-assets/logo192.png"
+    },
+    "win": {
+      "icon": "build-assets/icon.ico",
+      "target": ["portable"]
+    },
+    "mac": {
+      "icon": "build-assets/icon.icns"
+    }
+  }
+}
